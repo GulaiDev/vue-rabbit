@@ -16,6 +16,10 @@ const router = createRouter({
           path: "category/:id",
           component: () => import("@/views/CategoryView.vue"),
         },
+        {
+          path: "category/sub/:id",
+          component: () => import("@/views/SubCategoryView.vue"),
+        },
       ],
     },
     {
@@ -23,6 +27,13 @@ const router = createRouter({
       component: () => import("@/views/LoginView.vue"),
     },
   ],
+
+  //路由滚动行为定制
+  scrollBehavior() {
+    return {
+      top: 0,
+    };
+  },
 });
 
 export default router;
